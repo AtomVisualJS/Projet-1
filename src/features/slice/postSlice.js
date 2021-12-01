@@ -7,12 +7,12 @@ const postSlice = createSlice({
     name: "post",
     initialState: {
         posts: [],
-        status: "idle",
+        loading: false,
         error: null,
     },
     extraReducers: {
         [GetAllPosts.pending]: (state, action) => {
-            state.status = "pending";
+            state.status = "loading";
         },
         [GetAllPosts.fulfilled]: (state, action) => {
             state.posts = action.payload;
