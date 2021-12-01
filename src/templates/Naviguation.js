@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Header from '../app/Header';
 
 
 
@@ -7,7 +7,7 @@ class Naviguation extends Component {
   render() {
     return (
       <div>
-        <h1>AtomVisualJS</h1>
+       <Header/>
        
       
       </div>
