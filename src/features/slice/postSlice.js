@@ -1,6 +1,7 @@
 
 import { createSlice } from "@reduxjs/toolkit";
-import { GetAllPosts } from "../../api/GET/postsGet";
+import { GetAllPosts} from "../../api/GET/postsGet"
+
 
 
 const postSlice = createSlice({
@@ -22,7 +23,9 @@ const postSlice = createSlice({
             state.error = action.error;
             state.status = "failed";
         },
+       
     },
+  
 });
 
 export default postSlice.reducer;
