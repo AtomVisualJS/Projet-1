@@ -6,9 +6,7 @@ class Naviguation extends Component {
     return (
       <div>
         <Header />
-        <br />
-        <br />
-        <br />
+        <br /><br /><br />
       </div>
     );
   }

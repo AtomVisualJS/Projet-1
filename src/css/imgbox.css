@@ -1,4 +1,12 @@
 .imgBox{
-    margin-left: 15%;
-    width: 70%;
+    margin: 5%;
+    width: 90%;
+    border: solid black;
+    border-radius: 15px;
+   
 }
+
+h1{
+    text-align: center;
+}
+
