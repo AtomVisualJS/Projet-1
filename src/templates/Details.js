@@ -1,35 +1,44 @@
+import React, { Component } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+
+class Details extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: this.props.match.params.id,
+      details: [],
+      loading: true,
+    };
+ console.log(this.props.match.params.id);
+  }
 
 
-const Details = () => {
-  const { id } = useParams();
-  console.log(id);
 
- const getProduct = () => {
+  componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/posts/${id}`)
+      .get(`http://localhost:5000/api/posts/${this.props.match.params.id}`)
       .then((res) => {
-        const product = res.data;
-        console.log(product);
-       
-
-      })
-      .catch((err) => {
-        console.log(err);
+        this.setState({ details: res.data, loading: false });
       });
-  };
+  }
 
-   
+  
 
-
-
-  return (
-    <div>
-      <h1>Details</h1>
-      <button onClick={getProduct}>Get Product</button>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        {this.state.loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div key={this.state.details.id}>
+            <h1>{this.state.details.title}</h1>
+            <p>{this.state.details.body}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
 export default Details;

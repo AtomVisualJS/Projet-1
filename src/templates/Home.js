@@ -16,14 +16,12 @@ const Home = () => {
   const renderedPosts = posts.map((post) => {
     return (
       <div key={post.id} className="box">
-        <h1>{post.title}</h1>
-
-        <img src={post.img} alt="post" width="20%" />
-        <div className="info-box">
-        <p>{post.body}</p>
-       
-        </div>  
-        <Link to={`/posts/${post.id}`}>Voir plus</Link> 
+        <div className="card">
+          <br />
+          <h1>{post.title}</h1>
+          <img src={post.img} alt="post" width="20%" />
+          <Link to={`/posts/${post.id}`}>Voir plus</Link>
+        </div>
       </div>
     );
   });

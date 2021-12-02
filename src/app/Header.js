@@ -1,4 +1,5 @@
-import { Chip, Avatar } from "@material-ui/core";
+import { Chip, Avatar} from "@material-ui/core";
+import { Link } from "react-router-dom";
 import "../css/app.css";
 import ImgLogo from "../image/phpHYXeSS_1.jpg";
 
@@ -30,14 +31,14 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Link
-              </a>
+              <Link className="nav-link" to="/newposts">
+                New Posts
+              </Link>
             </li>
           </ul>
           <form className="d-flex">

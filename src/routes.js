@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import Home from './templates/Home';
 import Details from './templates/Details';
+import NewPosts from './templates/NewPosts';
 
 class Routing extends Component {
   render() {
@@ -17,6 +18,7 @@ class Routing extends Component {
               <Home />
             </React.Fragment>}
           />
+          <Route exact path="/newposts" component={NewPosts} />
           <Route exact path="/posts/:id" component={Details} />
           <Redirect to="/" />
         </Switch>
