@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/css/imgbox.css"],"names":[],"mappings":"AAAA,QACI,SAAU,CACV,SAAU,CACV,iBAAmB,CACnB,kBAEJ,CAEA,GACI,iBACJ","file":"main.d3341698.chunk.css","sourcesContent":[".imgBox{\n    margin: 5%;\n    width: 90%;\n    border: solid black;\n    border-radius: 15px;\n   \n}\n\nh1{\n    text-align: center;\n}\n\n"]}
