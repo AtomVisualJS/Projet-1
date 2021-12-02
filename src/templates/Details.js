@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import api from "../api/url"
 
 class Details extends Component {
   constructor(props) {
@@ -16,12 +16,13 @@ class Details extends Component {
 
 
   componentDidMount() {
-    axios
-      .get(`http://localhost:5000/api/posts/${this.props.match.params.id}`)
-      .then((res) => {
-        this.setState({ details: res.data, loading: false });
-      });
+    (async () => {
+      const details = await api.get(`/post/${this.props.match.params.id}`);
+      this.setState({ details: details.data, loading: false });
+    }
+    )();
   }
+
 
   
 

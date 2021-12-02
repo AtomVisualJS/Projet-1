@@ -34,12 +34,18 @@ const Header = () => {
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
+            </li> 
+            <li className="nav-item">
+              <Link className="nav-link" to="/images">
+                Images
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/newposts">
-                New Posts
+                New Images
               </Link>
             </li>
+           
           </ul>
           <form className="d-flex">
             <input
