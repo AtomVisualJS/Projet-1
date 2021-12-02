@@ -1,20 +1,28 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+
 const Details = () => {
   const { id } = useParams();
   console.log(id);
 
-  const getProduct = () => {
+ const getProduct = () => {
     axios
       .get(`http://localhost:5000/api/posts/${id}`)
       .then((res) => {
-        console.log(res.data);
+        const product = res.data;
+        console.log(product);
+       
+
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+   
+
+
 
   return (
     <div>
