@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
+
 
 
 
@@ -56,6 +56,8 @@ class NewPosts extends Component {
   render() {
     return (
       <div className="container">
+        <br />$$
+        <h2>New Post</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -79,9 +81,17 @@ class NewPosts extends Component {
               onChange={this.handleDescriptionChange}
             ></textarea>
           </div>
-        
-          <input type="file" onChange={this.handleFilesChange} />
-          <Button type="submit">Submit</Button>
+          <br />
+          <div className="form-group">
+            <input
+              type="file"
+              className="form-control-file"
+              id="files"
+              onChange={this.handleFilesChange}
+            />
+          </div>
+          <br />
+         <button type="submit" className="btn btn-primary">Uploads</button>
         </form>
       </div>
     );
