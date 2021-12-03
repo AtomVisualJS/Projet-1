@@ -6,7 +6,7 @@ import "../css/imgbox.css";
 import ButtonBases from "../js/ButtonBases";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-
+import Users from "./Users.js";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class Home extends Component {
     };
   }
   componentDidMount() {
-    axios.get("http://localhost:5000/api/upload").then((res) => {
+    axios.get("http://localhost:5000/api/posts").then((res) => {
       this.setState({
         data: res.data.posts,
       });
@@ -31,8 +31,11 @@ class Home extends Component {
           {this.state.data.map((data) => (
             <div className="imgBox" key={data._id}>
               <div style={{ float: "right", margin: 10 }}>
-                <Avatar />
-                users
+                <Avatar
+                  src="https://bio-conquete.fr/wp-content/uploads/2020/10/IMG_7552-scaled.jpg"
+                
+                />
+                <Users/>
               </div>
               <h2>{data.name}</h2>
               <p>{data.price} $</p>

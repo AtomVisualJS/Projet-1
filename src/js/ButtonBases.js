@@ -6,13 +6,13 @@ import Typography from '@mui/material/Typography';
 
 const images = [
   {
-    url: '/static/images/buttons/breakfast.jpg',
-    title: 'Breakfast',
+    url: 'https://le-ptit-fermier-de-kervihan.fr/wp-content/uploads/2020/03/oeufs.jpg',
+    title: 'Produits',
     width: '40%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
-    title: 'Burgers',
+    url: 'https://www.ferme-de-saint-thibault.fr/wp-content/uploads/2015/11/elevage-de-poule-en-plein-air.jpg',
+    title: 'Exploitation',
     width: '30%',
   },
   {
