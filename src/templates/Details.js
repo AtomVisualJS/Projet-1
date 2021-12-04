@@ -18,7 +18,7 @@ class Details extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/upload/${this.props.match.params.id}`)
+      .get(`http://localhost:5000/api/products/${this.props.match.params.id}`)
       .then((res) => {
         this.setState({
           data: res.data,

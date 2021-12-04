@@ -5,20 +5,26 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 
 const images = [
+  
   {
-    url: 'https://le-ptit-fermier-de-kervihan.fr/wp-content/uploads/2020/03/oeufs.jpg',
-    title: 'Produits',
-    width: '40%',
+    url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
+    title: 'poire',
+    width: '25%',
   },
   {
-    url: 'https://www.ferme-de-saint-thibault.fr/wp-content/uploads/2015/11/elevage-de-poule-en-plein-air.jpg',
-    title: 'Exploitation',
-    width: '30%',
+    url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
+    title: 'Beaufs',
+    width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
-    title: 'Camera',
-    width: '30%',
+    url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
+    title: 'Lait',
+    width: '25%',
+  },
+  {
+    url: 'https://img-3.journaldesfemmes.fr/RpcCDPD810S6BnHUaFRz-XrFpwc=/1500x/smart/de51ac639fe44a59b257284661bcf580/ccmcms-jdf/10660234.jpg',
+    title: 'Miel',
+    width: '25%',
   },
 ];
 

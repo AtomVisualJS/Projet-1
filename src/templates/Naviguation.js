@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import Header from "../app/Header";
+import ResponsiveAppBar from "../app/Header";
+
 
 class Naviguation extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <br /><br /><br />
+        <ResponsiveAppBar />
+       <br/><br/><br/>
+       
       </div>
     );
   }
