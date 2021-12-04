@@ -2,9 +2,9 @@ import React from "react";
 
 
 // Connexion
-import Login from "./connection/Login";
+
 import Register from "./connection/Register";
-  
+  import {Link} from "react-router-dom";
 
 
 class Compte extends React.Component {
@@ -12,7 +12,9 @@ class Compte extends React.Component {
     return (
         <div className="container">
         <Register />
-        <Login/>
+        <Link to="/compte/register">
+            S'inscrire
+        </Link>
      </div>
     );
   }

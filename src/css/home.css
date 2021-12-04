@@ -29,3 +29,15 @@
   border : solid black;
   border-radius: 5px;
 }
+
+.imgBox{
+  width: 80%;
+  margin-left: 10%;
+  height: 100%;
+  border: solid black;
+  border-radius: 15px;
+}
+
+.linkdetails{
+ text-align: center;
+}

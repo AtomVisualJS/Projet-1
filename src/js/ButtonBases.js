@@ -8,24 +8,22 @@ const images = [
   
   {
     url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
-    title: 'poire',
-    width: '25%',
+    title: 'Produits',
+    width: '33.3333333333333333333333333333333%',
   },
   {
-    url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
+    url: 'https://img-3.journaldesfemmes.fr/jW4rmNv62U-rctIaexn_-cHeaW4=/1500x/smart/f84e20828c0b4fc18854e3aae309dbd2/ccmcms-jdf/26665591.jpg',
     title: 'Beaufs',
-    width: '25%',
+    width: '33.3333333333333333333333333333333%',
   },
   {
     url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
-    title: 'Lait',
-    width: '25%',
+    title: 'poire',
+    width: '33.3333333333333333333333333333333%',
   },
-  {
-    url: 'https://img-3.journaldesfemmes.fr/RpcCDPD810S6BnHUaFRz-XrFpwc=/1500x/smart/de51ac639fe44a59b257284661bcf580/ccmcms-jdf/10660234.jpg',
-    title: 'Miel',
-    width: '25%',
-  },
+  
+ 
+ 
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({

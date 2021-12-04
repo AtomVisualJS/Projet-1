@@ -9,7 +9,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
-import StandardImageList from './StandardImageList';
+import { Avatar } from '@mui/material';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -61,8 +61,9 @@ export default function CustomizedDialogs() {
 
   return (
     <div>
-      <Button  onClick={handleClickOpen}>
-        <StandardImageList/>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        <Avatar src="https://www.chaux-la-lotiere.fr/mod_turbolead/getvue.php/422_view.png" alt="" />
+        Ferme Albert
       </Button>
       <BootstrapDialog
         onClose={handleClose}
@@ -90,7 +91,7 @@ export default function CustomizedDialogs() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-            Save changes
+            En savoir plus
           </Button>
         </DialogActions>
       </BootstrapDialog>

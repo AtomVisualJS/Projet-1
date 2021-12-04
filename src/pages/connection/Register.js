@@ -5,7 +5,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      username: "",
       email: "",
       password: "",
       file: null,
@@ -19,7 +19,7 @@ class Register extends React.Component {
   onFormSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("name", this.state.name);
+    formData.append("username", this.state.username);
     formData.append("email", this.state.email);
     formData.append("password", this.state.password);
     formData.append("myImage", this.state.file);
@@ -37,7 +37,7 @@ class Register extends React.Component {
   }
 
   onNameChange(e) {
-    this.setState({ name: e.target.value });
+    this.setState({ username: e.target.value });
   }
 
   onEmailChange(e) {
@@ -56,7 +56,7 @@ class Register extends React.Component {
         <div className="container" style={{textAlign:"center"}}>
       <form onSubmit={this.onFormSubmit}>
         <h1>Inscription</h1>
-        <input type="text" name="name" onChange={this.onNameChange} placeholder="name"/>
+        <input type="text" name="username" onChange={this.onNameChange} placeholder="name"/>
         <br />
         <br />
         <input type="text" name="email" onChange={this.onEmailChange} placeholder="email" />

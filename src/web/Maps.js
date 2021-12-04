@@ -4,7 +4,6 @@ import { GoogleMap, LoadScript } from "@react-google-maps/api";
 const containerStyle = {
   width: "90%",
   height: "400px",
-  margin: "5%",
 };
 
 class Maps extends Component {

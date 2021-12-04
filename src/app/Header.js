@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 
-const pages = ['Accueil', 'Proximite', 'Explorer', 'NewProducts'];
+const pages = ['Accueil', 'Proximite', 'NewProducts'];
 const settings = ['Compte', 'Favoris', 'Panier', 'Infos'];
 
 const ResponsiveAppBar = () => {
@@ -46,7 +46,10 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-           <Link style={{textDecoration:"none", color:"white" }} to="/">Yecoom</Link>
+           <Link style={{textDecoration:"none", color:"white" }} to="/">
+            
+          Yecoom
+             </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -143,6 +146,8 @@ const ResponsiveAppBar = () => {
           </Box>
         </Toolbar>
       </Container>
+      <img src="https://www.podcastscience.fm/wp-content/uploads/2011/03/blue-water-background-14048696914el.jpg" alt="home"
+        height="30px" width="100%"/>
     </AppBar>
   );
 };
