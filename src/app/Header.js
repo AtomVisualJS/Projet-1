@@ -146,8 +146,7 @@ const ResponsiveAppBar = () => {
           </Box>
         </Toolbar>
       </Container>
-      <img src="https://www.podcastscience.fm/wp-content/uploads/2011/03/blue-water-background-14048696914el.jpg" alt="home"
-        height="30px" width="100%"/>
+    
     </AppBar>
   );
 };

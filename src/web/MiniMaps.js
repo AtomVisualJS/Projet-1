@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
 const containerStyle = {
-  width: "40%",
-  height: "150px",
-  margin: "2%",
+  
+  height: "200px",
+  border: "1px solid black",
+  borderRadius: "5px",
+  boxShadow: "0px 0px 5px black",
+  backgroundColor: "white",
+  width: "98%",
+  marginLeft: "1%",
+
  
   
 

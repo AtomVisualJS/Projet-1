@@ -23,7 +23,7 @@ export default function BasicMenu() {
         onClick={handleClick}
       >
         <Avatar src="https://cdn.w600.comps.canstockphoto.fr/champs-ma%C3%AFs-images-sous-licence_csp51390454.jpg" alt="" />
-       <h6 style={{marginLeft:10}}>ECO</h6>
+       <h6 style={{marginLeft:10}}>Ferme les vaches</h6>
       </Button>
       <Menu
         id="basic-menu"

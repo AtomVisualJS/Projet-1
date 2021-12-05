@@ -7,20 +7,21 @@ import Typography from '@mui/material/Typography';
 const images = [
   
   {
+    url: 'https://www.parc-gatinais-francais.fr/wp-content/uploads/2015/09/Ferme-de-Moigny5.jpg',
+    title: "Exploitation",
+    width: '50%'
+  },
+ 
+ 
+  {
     url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
     title: 'Produits',
-    width: '33.3333333333333333333333333333333%',
+    width: '50%',
   },
-  {
-    url: 'https://img-3.journaldesfemmes.fr/jW4rmNv62U-rctIaexn_-cHeaW4=/1500x/smart/f84e20828c0b4fc18854e3aae309dbd2/ccmcms-jdf/26665591.jpg',
-    title: 'Beaufs',
-    width: '33.3333333333333333333333333333333%',
-  },
-  {
-    url: 'https://bio-c-bon.eu/sites/default/files/module/bio_push/conseils/lait.png',
-    title: 'poire',
-    width: '33.3333333333333333333333333333333%',
-  },
+ 
+ 
+ 
+ 
   
  
  

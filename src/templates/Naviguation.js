@@ -7,7 +7,7 @@ class Naviguation extends Component {
     return (
       <div>
         <ResponsiveAppBar />
-       <br/><br/><br/><br/><br/>
+       <br/><br/><br/>
        
       </div>
     );
