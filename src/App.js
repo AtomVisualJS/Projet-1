@@ -1,12 +1,20 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
-import Naviguation from "./templates/Naviguation";
+
+import  {UsersDispatch}  from "./Redux/dispatch/usersDispatch"
+import { ProductsDispatch } from "./Redux/dispatch/productsDispatch";
+import ResponsiveAppBar from "./app/Header";
 
 function App() {
+  console.log(navigator.userAgent);
   return (
     <div className="App">
-      <Naviguation />
+      <UsersDispatch />
+      <ProductsDispatch />
+      <ResponsiveAppBar />
+      <br/>
+      <br/>
     </div>
   );
 }

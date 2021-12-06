@@ -1,0 +1,9 @@
+.card-box{
+    max-width: 33%;
+    height: 290px;
+    margin-left: 25%;
+}
+
+.tableau{
+    flex-direction: column;
+}

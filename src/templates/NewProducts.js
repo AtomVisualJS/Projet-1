@@ -5,29 +5,33 @@ class NewProducts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: null,
       title: "",
       price: "",
       description: "",
-  
+      file: null,
+      society: "",
+
+      
+      
     };
 
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onPriceChange = this.onPriceChange.bind(this);
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
- 
+    this.onSocietyChange = this.onSocietyChange.bind(this);
     this.onChange = this.onChange.bind(this);
   }
   onFormSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("Imguser", this.state.file);
     formData.append("title", this.state.title);
     formData.append("price", this.state.price);
     formData.append("description", this.state.description);
-   
-
+    formData.append("Imguser", this.state.file);
+    formData.append("society", this.state.society);
+    
+    
     const config = {
       headers: {
         "content-type": "multipart/form-data",
@@ -40,9 +44,7 @@ class NewProducts extends React.Component {
       })
       .catch((error) => {});
   }
-  onChange(e) {
-    this.setState({ file: e.target.files[0] });
-  }
+ 
 
   onTitleChange(e) {
     this.setState({ title: e.target.value });
@@ -54,15 +56,23 @@ class NewProducts extends React.Component {
     this.setState({ description: e.target.value });
   }
 
-  
+ onChange(e) {
+    this.setState({ file: e.target.files[0] });
+  }
+
+  onSocietyChange(e) {
+    this.setState({ society: e.target.value });
+  }
+
 
   render() {
     return (
       <div style={{ textAlign: "center" }}>
+        
         <form onSubmit={this.onFormSubmit}>
           <h1>File Upload</h1>
           <label> Title: </label>
-          <input type="text" name="title" onChange={this.onTitleChange} />{" "}
+          <input type="text" name="title" onChange={this.onTitleChange} />
           <br />
           <br />
           <label> Price: </label>
@@ -71,15 +81,20 @@ class NewProducts extends React.Component {
           <br />
           <label> Description: </label>
           <input
-            type="text"
+            type="textarea"
             name="description"
             onChange={this.onDescriptionChange}
           />{" "}
           <br />
           <br />
-       
           <label> Image: </label>
           <input type="file" name="myImage" onChange={this.onChange} />
+          <br />
+          <br />
+          <br />
+          <br />
+          <label> Society: </label>
+          <input type="text" name="society" onChange={this.onSocietyChange} />
           <br />
           <br />
           <button type="submit">Envoyer</button>

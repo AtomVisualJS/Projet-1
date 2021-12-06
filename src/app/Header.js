@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,10 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import {Link} from 'react-router-dom';
 
-
-const pages = ['Accueil', 'Proximite', 'NewProducts'];
-const settings = ['Compte', 'Favoris', 'Panier', 'Infos'];
+const pages = ['Products', 'Proximite', 'Blog'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,8 +36,8 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="fixed" style={{backgroundColor:"darkseagreen"}}>
-      <Container maxWidth="xl">
+    <AppBar position="fixed">
+      <Container maxWidth="xl" style={{backgroundColor:"#095730"}}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -46,10 +45,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-           <Link style={{textDecoration:"none", color:"white" }} to="/">
-            
-          Yecoom
-             </Link>
+            Yecoom
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -82,12 +78,11 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link style={{textDecoration:"none" }} to={`/${page.toLowerCase()}`}>
-                   {page}
-                    </Link>
-                
+                <Link to={`/${page.toLowerCase()}`} key={page}>
+                <MenuItem  onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -97,7 +92,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-         <Link style={{textDecoration:"none", color:"white" }} to="/">Yecoom</Link>
+            Yecoom
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -106,8 +101,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link style={{textDecoration:"none", color:"white" }} to={`/${page.toLowerCase()}`}>{page}</Link>
-              
+                {page}
               </Button>
             ))}
           </Box>
@@ -115,7 +109,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="https://cache.cosmopolitan.fr/data/photo/w1000_ci/53/femme-belle-peau-visage.jpg " />
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -136,17 +130,13 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Link style={{textDecoration:"none" }} to={`/${setting.toLowerCase()}`}>
-                    {setting}
-                  </Link>
+                  <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
-          
           </Box>
         </Toolbar>
       </Container>
-    
     </AppBar>
   );
 };

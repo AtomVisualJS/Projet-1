@@ -8,7 +8,7 @@ class Register extends React.Component {
       username: "",
       email: "",
       password: "",
-      file: null,
+
     };
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
@@ -65,7 +65,6 @@ class Register extends React.Component {
         <input type="password" name="password" onChange={this.onPasswordChange} placeholder="password" />
         <br />
         <br />
-        <input type="file" name="myImage" onChange={this.onChange} />
         <br />
         <br />
         <button type="submit">Upload</button>

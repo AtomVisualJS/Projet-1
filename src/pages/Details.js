@@ -9,7 +9,7 @@ class Details extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.match.params.id,
+      id: this.props.match.params._id,
       data: [],
       loading: true,
       error: null,
@@ -18,7 +18,7 @@ class Details extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/products/${this.props.match.params.id}`)
+      .get(`http://localhost:5000/api/products/${this.props.match.params._id}`)
       .then((res) => {
         this.setState({
           data: res.data,
@@ -36,13 +36,13 @@ class Details extends Component {
 
   render() {
     return (
-  <div className="container">
+  <div >
     <Link to="/">
     <Button variant="contained" disableElevation>
       Retour
     </Button>
     </Link>
-    <div>
+    <div className="container">
       {this.state.loading ? (
         <div>Loading...</div>
       ) : (
