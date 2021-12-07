@@ -59,7 +59,7 @@ export default function RecipeReviewCard() {
         </IconButton>
         <IconButton aria-label="add to favorites">  
           <Link to={`/proximite/2`}>
-            <PlaceIcon /> A 2 km
+            <PlaceIcon />
           </Link>
         </IconButton>
 
@@ -69,8 +69,7 @@ export default function RecipeReviewCard() {
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
-        > Produits
-          <ExpandMoreIcon />
+        > <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
