@@ -1,4 +1,4 @@
-import ButtonBases from '../js/ButtonBases.js';
+
 import axios from "axios";
 import React, { Component } from "react";
 import Button from '@mui/material/Button';
@@ -50,7 +50,7 @@ class Details extends Component {
           <h1>{this.state.data.name}</h1>
           
           <p>{this.state.data.description}</p>
-          <ButtonBases/>
+        
         </div>
       )}
     </div>
