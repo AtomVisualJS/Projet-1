@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import "../css/proximite.css";
-import Maps from "../web/MiniMaps";
+import MainMaps from "../web/MainMaps";
 
 class Proximite extends Component {
   render() {
     return (
       <div>
-        <h2 style={{textAlign:"center", marginTop:18}}>À Proximité</h2>
+        <h2 style={{textAlign:"center", marginTop:5}}>À Proximité</h2>
         <div className="container">
           
 
-          <Maps />
+          <MainMaps />
         </div>
       </div>
     );

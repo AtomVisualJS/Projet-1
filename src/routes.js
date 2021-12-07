@@ -7,10 +7,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 /// Pages
 import Compte from "./pages/Compte";
 import Proximite from "./pages/Proximite";
-import NewProducts from "./templates/NewProducts";
 import Details from "./pages/Details";
 import Register from "./pages/connection/Register";
 import Home from "./Home/Home";
+import SocietyMaps from "./pages/details/SocietyMaps";
+
+
 class Routing extends Component {
   render() {
     return (
@@ -29,9 +31,9 @@ class Routing extends Component {
           />
           <Route exact path="/products/:id" component={Details} />
           <Route exact path="/proximite" component={Proximite}/>
+          <Route exact path="/proximite/2" component={SocietyMaps}/>
           <Route exact path="/compte" component={Compte} />
           <Route exact path="/compte/register" component={Register} />
-          <Route exact path="/newproducts" component={NewProducts} />
           <Redirect to="/" />
         </Switch>
       </div>

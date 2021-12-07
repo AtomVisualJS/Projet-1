@@ -3,15 +3,14 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 const images = [
   {
-    url: "https://www.parc-gatinais-francais.fr/wp-content/uploads/2015/09/Ferme-de-Moigny5.jpg",
-    title: "Ferme de Moigny",
+    url:"https://www.normandie-tourisme.fr/wp-content/uploads/2021/07/Vache-normande-ferme-coupigny-TheExplorers-valentin-pacaut-1600x900.jpg",
+    title: "Ferme de la ville de Paris",
     width: "100%",
   },
- 
-
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
@@ -80,9 +79,7 @@ const ImageMarked = styled("span")(({ theme }) => ({
 
 export default function ButtonBases() {
   return (
-    <Box
-      sx={{ display: "flex", flexWrap: "wrap", minWidth: 300,  }}
-    >
+    <Box sx={{ display: "flex", flexWrap: "wrap", minWidth: 300 }}>
       {images.map((image) => (
         <ImageButton
           focusRipple
@@ -93,22 +90,24 @@ export default function ButtonBases() {
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
-          <Image>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              sx={{
-                position: "relative",
-                p: 4,
-                pt: 2,
-                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-              }}
-            >
-              {image.title}
-              <ImageMarked className="MuiImageMarked-root" />
-            </Typography>
-          </Image>
+          <Link to="/entreprise">
+            <Image>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                sx={{
+                  position: "relative",
+                  p: 4,
+                  pt: 2,
+                  pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                }}
+              >
+                {image.title}
+                <ImageMarked className="MuiImageMarked-root" />
+              </Typography>
+            </Image>
+          </Link>
         </ImageButton>
       ))}
     </Box>

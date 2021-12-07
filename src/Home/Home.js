@@ -1,32 +1,24 @@
 import "./css/home.css";
 import * as React from "react";
-import Button from "@mui/material/Button";
-import ButtonBases from "../templates/ButtonBases";
-import RadioGroupRating from "../templates/RadioGroupRating";
 
-import MediaCard from "../templates/MediaCard";
+import { Avatar } from "@mui/material";
 
+
+import RecipeReviewCard from "../templates/RecipeReviewCard";
 const Home = () => {
   return (
     <div className="container">
-      <ButtonBases />
+      
   
       <div style={{textAlign:"center",}}>
-      <div className="row">
-      <MediaCard />
-      <MediaCard />
+     <div  width="50%">
+       <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" style={{margin:10}} />
+      <RecipeReviewCard />
      
-      </div> <br />
-      </div>
-      <Button
-        variant="contained"
-        color="primary"
-        style={{ float: "right", margin: 5 }}
-      >
-        En savoir Plus
-      </Button>
-      <br />
-      <RadioGroupRating /> 98%
+
+
+     </div>
+     </div>
     </div>
   );
 };

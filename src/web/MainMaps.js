@@ -6,39 +6,26 @@ const containerStyle = {
   height: "400px",
 };
 
+class MainMaps extends React.Component {
+  state = {
+    center: {
+      lat: "",
+      lng: "",
+    },
+  };
 
-class MiniMaps extends React.Component {
-
-state = {
-  center: {
-    lat:"",
-    lng:"",
-  },
-}
-
-componentDidMount() {
-  navigator.geolocation.getCurrentPosition(position => {
-    this.setState({
-      center: {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      },
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.setState({
+        center: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        },
+      });
     });
-  });
-}
+  }
 
-
-
-
-
-  
-
-
-
-
-
-
-render() {
+  render() {
     return (
       <LoadScript googleMapsApiKey="AIzaSyDSQ9NeiM6g-CT1RtGzp4tbMewAHhXJhEQ">
         <GoogleMap
@@ -50,14 +37,8 @@ render() {
           <></>
         </GoogleMap>
       </LoadScript>
-    )};
+    );
+  }
 }
 
-export default MiniMaps;
-
-
-
-
-
-
- 
+export default MainMaps;

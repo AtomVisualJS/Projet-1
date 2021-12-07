@@ -13,8 +13,41 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import {Link} from 'react-router-dom';
 
-const pages = ['Products', 'Proximite', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  {
+    id: 1,
+    name: 'Home',
+    to: '',
+  },
+  {
+    id: 2,
+    name: 'Proximité',
+    to: 'proximite',
+  },
+  {
+    id: 3,
+    name: 'Vendre',
+    to: 'newproducts',
+  },
+];
+
+
+
+
+
+
+const settings = [
+  {
+    id: 1,
+    name:'Compte',
+    to: 'compte',
+  },
+  {
+    id: 2,
+    name:'Déconnexion',
+    to: 'deconnexion',
+  },
+];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -39,6 +72,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="fixed">
       <Container maxWidth="xl" style={{backgroundColor:"#095730"}}>
         <Toolbar disableGutters>
+          <Link to="/" style={{textDecoration:"none", color:"white"}}>
           <Typography
             variant="h6"
             noWrap
@@ -47,6 +81,7 @@ const ResponsiveAppBar = () => {
           >
             Yecoom
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -78,31 +113,35 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <Link to={`/${page.toLowerCase()}`} key={page}>
+                <Link to={`/${page.to}`} key={page.id} style={{textDecoration:"none"}}>
                 <MenuItem  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
                 </Link>
               ))}
             </Menu>
           </Box>
+         
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            Yecoom
+          <Link to="/" style={{textDecoration:"none", color:"white"}}>   Yecoom </Link>
           </Typography>
+         
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Link to={`/${page.to}`} key={page.id} style={{textDecoration:"none"}}>
               <Button
-                key={page}
+                key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.name}
               </Button>
+              </Link>
             ))}
           </Box>
 
@@ -129,14 +168,17 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <Link style={{textDecoration:"none"}} to={`/${setting.to}`} key={setting.id} >
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{setting.name}</Typography>
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
         </Toolbar>
       </Container>
+   
     </AppBar>
   );
 };
