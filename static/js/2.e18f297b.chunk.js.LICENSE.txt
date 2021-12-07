@@ -4,10 +4,6 @@ object-assign
 @license MIT
 */
 
-/*!
- * Programatically add the following
- */
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
