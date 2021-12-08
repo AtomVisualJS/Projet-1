@@ -11,6 +11,7 @@ import Details from "./pages/Details";
 import Register from "./pages/connection/Register";
 import Home from "./Home/Home";
 import SocietyMaps from "./pages/details/SocietyMaps";
+import Login from "./pages/connection/Login";
 
 
 class Routing extends Component {
@@ -24,16 +25,19 @@ class Routing extends Component {
             render={() => (
               <React.Fragment>
                 <Home />
-                <Home />
+              
                 
               </React.Fragment>
             )}
           />
           <Route exact path="/products/:id" component={Details} />
           <Route exact path="/proximite" component={Proximite}/>
-          <Route exact path="/proximite/2" component={SocietyMaps}/>
+          <Route exact path="/proximite/:id/:lat/:lng/:title/:adress/:city" component={SocietyMaps}/>
+
+
           <Route exact path="/compte" component={Compte} />
-          <Route exact path="/compte/register" component={Register} />
+          <Route exact path="/compte/connexion" component={Login} />
+          <Route exact path="/compte/inscription" component={Register} />
           <Redirect to="/" />
         </Switch>
       </div>

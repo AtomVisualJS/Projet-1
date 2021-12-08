@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+
 
 const images = [
   {
@@ -79,7 +79,7 @@ const ImageMarked = styled("span")(({ theme }) => ({
 
 export default function ButtonBases() {
   return (
-    <Box sx={{ display: "flex", flexWrap: "wrap", minWidth: 300 }}>
+    <Box sx={{ display: "flex", flexWrap: "wrap", width:"100%" }}>
       {images.map((image) => (
         <ImageButton
           focusRipple
@@ -90,7 +90,7 @@ export default function ButtonBases() {
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
-          <Link to="/entreprise">
+          
             <Image>
               <Typography
                 component="span"
@@ -107,7 +107,7 @@ export default function ButtonBases() {
                 <ImageMarked className="MuiImageMarked-root" />
               </Typography>
             </Image>
-          </Link>
+         
         </ImageButton>
       ))}
     </Box>

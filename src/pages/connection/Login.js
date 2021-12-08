@@ -1,78 +1,91 @@
-import React, { Component } from "react";
 import axios from "axios";
-
+import React, { Component } from "react";
+import {Link} from "react-router-dom";
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      email: "",
-      password: "",
+      clientemail: "",
+      clientpassword: "",
+      client: [],
     };
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleClientEmailChange = this.handleClientEmailChange.bind(this);
+    this.handleClientPasswordChange = this.handleClientPasswordChange.bind(this);
+    this.handleClientSubmit = this.handleClientSubmit.bind(this);
   }
 
-  handleUsernameChange(event) {
-    this.setState({ username: event.target.value });
+ 
+
+  handleClientEmailChange(event) {
+    this.setState({ clientemail: event.target.value });
   }
 
-  handleEmailChange(event) {
-    this.setState({ email: event.target.value });
+  handleClientPasswordChange(event) {
+    this.setState({ clientpassword: event.target.value });
   }
 
-  handlePasswordChange(event) {
-    this.setState({ password: event.target.value });
-  }
-
-  handleLoginSubmit(event) {
+  handleClientSubmit(event) {
     event.preventDefault();
-    const user = {
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
+    const client = {
+      clientemail: this.state.clientemail,
+      clientpassword: this.state.clientpassword,
     };
-    axios
-      .post("http://localhost:5000/api/clients/login", user)
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("token", res.data.token);
-        this.props.history.push("/");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.post("http://localhost:5000/api/clients/login", client).then((res) => {
+      console.log(res.data);
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("client", res.data.client);
+      this.props.history.push("/");
+      return res.data;
+    });
+    
+    
   }
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
-            <form noValidate onSubmit={this.handleLoginSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <div>
+        <div
+          className="container"
+          style={{ margin: "15%", width: "70%", padding: "10%" }}
+        >
+          <div className="row">
+            <label>
+              <h1 style={{ textAlign: "center" }}>Connexion</h1>
+            </label>
+            <form onSubmit={this.handleClientSubmit}>
               <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <input type="text" className="form-control" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleUsernameChange} />
+                <br />
+                <label>Email</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={this.state.clientemail}
+                  onChange={this.handleClientEmailChange}
+                />
+                <br />
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  value={this.state.clientpassword}
+                  onChange={this.handleClientPasswordChange}
+                />
+                <br />
+                <button type="submit" className="btn btn-primary">
+                  Se Connecter
+                </button>
+                <br />
               </div>
-              <div className="form-group">
-                <label htmlFor="email">Email address</label>
-                <input type="email" className="form-control" name="email" placeholder="Enter email" value={this.state.email} onChange={this.handleEmailChange} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" className="form-control" name="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />
-              </div>
-              <button type="submit" className="btn btn-lg btn-primary btn-block">
-                Sign in
-              </button>
             </form>
+            <br />
+           
           </div>
-        </div>
+        </div> 
+        <Link to="/compte/inscription">
+              S'inscrire
+          </Link>
       </div>
-      
-    )
+    );
   }
 }
 

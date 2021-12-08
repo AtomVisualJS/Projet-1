@@ -27,7 +27,7 @@ class MainMaps extends React.Component {
 
   render() {
     return (
-      <LoadScript googleMapsApiKey="AIzaSyDSQ9NeiM6g-CT1RtGzp4tbMewAHhXJhEQ">
+      <LoadScript async="true" googleMapsApiKey="AIzaSyDSQ9NeiM6g-CT1RtGzp4tbMewAHhXJhEQ">
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={this.state.center}

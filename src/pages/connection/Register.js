@@ -1,77 +1,95 @@
-import React from "react";
 import axios from "axios";
+import React, { Component } from "react";
 
-class Register extends React.Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      email: "",
-      password: "",
-
+      clientname: "",
+      clientemail: "",
+      clientpassword: "",
     };
-    this.onFormSubmit = this.onFormSubmit.bind(this);
-    this.onNameChange = this.onNameChange.bind(this);
-    this.onEmailChange = this.onEmailChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.handleClientNameChange = this.handleClientNameChange.bind(this);
+    this.handleClientEmailChange = this.handleClientEmailChange.bind(this);
+    this.handleClientPasswordChange = this.handleClientPasswordChange.bind(this);
+    this.handleClientSubmit = this.handleClientSubmit.bind(this);
   }
-  onFormSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("username", this.state.username);
-    formData.append("email", this.state.email);
-    formData.append("password", this.state.password);
-    formData.append("myImage", this.state.file);
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data",
-      },
+
+  handleClientNameChange(event) {
+    this.setState({ clientname: event.target.value });
+  }
+
+  handleClientEmailChange(event) {
+    this.setState({ clientemail: event.target.value });
+  }
+
+  handleClientPasswordChange(event) {
+    this.setState({ clientpassword: event.target.value });
+  }
+
+  handleClientSubmit(event) {
+    event.preventDefault();
+    const client = {
+      clientname: this.state.clientname,
+      clientemail: this.state.clientemail,
+      clientpassword: this.state.clientpassword,
     };
-    axios
-      .post("http://localhost:5000/api/clients/", formData, config)
-      .then((response) => {
-        alert("The file is successfully uploaded");
-      })
-      .catch((error) => {});
-  }
-
-  onNameChange(e) {
-    this.setState({ username: e.target.value });
-  }
-
-  onEmailChange(e) {
-    this.setState({ email: e.target.value });
-  }
-  onPasswordChange(e) {
-    this.setState({ password: e.target.value });
-  }
-
-  onChange(e) {
-    this.setState({ file: e.target.files[0] });
+    axios.post("http://localhost:5000/api/clients/register", client).then((res) => {
+      const result = res.data;
+       alert(result.message);
+      this.props.history.push("/");
+    });
   }
 
   render() {
     return (
-        <div className="container" style={{textAlign:"center"}}>
-      <form onSubmit={this.onFormSubmit}>
-        <h1>Inscription</h1>
-        <input type="text" name="username" onChange={this.onNameChange} placeholder="name"/>
-        <br />
-        <br />
-        <input type="text" name="email" onChange={this.onEmailChange} placeholder="email" />
-        <br />
-        <br />
-        <input type="password" name="password" onChange={this.onPasswordChange} placeholder="password" />
-        <br />
-        <br />
-        <br />
-        <br />
-        <button type="submit">Upload</button>
-      </form>
+      <div>
+        <div
+          className="container"
+          style={{ margin: "15%", width: "70%", padding: "10%" }}
+        >
+          <div className="row">
+            <label>
+              <h1 style={{ textAlign: "center" }}>Inscription</h1>
+            </label>
+            <form onSubmit={this.handleClientSubmit}>
+              <div className="form-group">
+                <label>Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={this.state.clientname}
+                  onChange={this.handleClientNameChange}
+                />
+                <br />
+                <label>Email</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={this.state.clientemail}
+                  onChange={this.handleClientEmailChange}
+                />
+                <br />
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  value={this.state.clientpassword}
+                  onChange={this.handleClientPasswordChange}
+                />
+                <br />
+                <button type="submit" className="btn btn-primary">
+                  Register
+                </button>
+                <br />
+              </div>
+            </form>
+            <br />
+          </div>
         </div>
-        );
-    }
+      </div>
+    );
+  }
 }
 
 export default Register;
