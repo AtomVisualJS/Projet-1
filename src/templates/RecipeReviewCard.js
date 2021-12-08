@@ -9,11 +9,10 @@ import Collapse from "@mui/material/Collapse";
 import ButtonBases from "./ButtonBases";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-
 import PlaceIcon from "@mui/icons-material/Place";
 import TitlebarImageList from "./TitlebarImageList";
 import { useSelector } from "react-redux";
-import { Avatar } from "@mui/material";
+
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -32,22 +31,13 @@ export default function RecipeReviewCard() {
   }));
 
   const data = useSelector((state) => state.data.data);
-  
-
   const data2 = data.map((item) => {
     return (
       <div className="container" key={item._id}>
         <div style={{ textAlign: "center" }}>
           <div width="100%">
             <Card sx={{ maxWidth: "100%" }}>
-              <Avatar alt="Remy Sharp" src={item.logo} style={{ margin: 10 }} />
-             
-                 <ButtonBases  />
-                 <ExpandMore
-                  expand={expanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="show more">Voir</ExpandMore>
+              <ButtonBases />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
                   {item.title}
@@ -56,14 +46,21 @@ export default function RecipeReviewCard() {
               <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites"></IconButton>
                 <IconButton aria-label="add to favorites">
-                  <Link to={`/proximite/${item._id}/${item.lat}/${item.lng}/${item.title}/${item.adress}/${item.city}`}>
+                  <Link
+                    to={`/proximite/${item._id}/${item.lat}/${item.lng}/${item.title}/${item.adress}/${item.city}`}
+                  >
                     <PlaceIcon />
                   </Link>
                 </IconButton>
                 {item.adress} {item.city}
-                
-                
-                
+                <ExpandMore
+                  expand={expanded}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  Voir
+                </ExpandMore>
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>

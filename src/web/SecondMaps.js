@@ -15,17 +15,21 @@ const SecondMaps = () => {
   const {adress} = useParams();
   const { city } = useParams();
 
-  console.log(title);
-  console.log(adress);
-  console.log(city);
 
   const center = {
     lat: parseFloat(lat),
     lng: parseFloat(lng)
   };
-  console.log(center);
+
 
   return (
+    <div>
+      <div>
+        <br />
+       <h1>{title}</h1>
+        <h2>{adress}, {city} </h2>
+       
+      </div>
     <LoadScript googleMapsApiKey="AIzaSyDSQ9NeiM6g-CT1RtGzp4tbMewAHhXJhEQ">
     <GoogleMap
       mapContainerStyle={containerStyle}
@@ -36,6 +40,7 @@ const SecondMaps = () => {
       <></>
     </GoogleMap>
   </LoadScript>
+  </div>
   );
 }
 
