@@ -11,7 +11,7 @@ const dataSlice = createSlice({
     },
     extraReducers: {
         [DatagetAll.pending]: (state, action) => {
-            state.loading = true;
+            state.status = "pending";
         },
         [DatagetAll.fulfilled]: (state, action) => {
             state.data = action.payload;

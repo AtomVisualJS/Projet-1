@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +47,7 @@ class Login extends Component {
       <div>
         <div
           className="container"
-          style={{ margin: "15%", width: "70%", padding: "10%" }}
+          style={{ marginLeft: "15%", width: "70%", padding: "7%" }}
         >
           <div className="row">
             <label>
@@ -70,10 +71,13 @@ class Login extends Component {
                   value={this.state.clientpassword}
                   onChange={this.handleClientPasswordChange}
                 />
+               
                 <br />
+               <div style={{textAlign:"center"}}>
                 <button type="submit" className="btn btn-primary">
                   Se Connecter
                 </button>
+                </div>
                 <br />
               </div>
             </form>

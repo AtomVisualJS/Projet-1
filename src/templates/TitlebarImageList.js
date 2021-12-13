@@ -12,10 +12,10 @@ export default function TitlebarImageList() {
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            src={`${item.img}`}
+            
             alt={item.title}
-            loading="lazy"
+            
           />
           <ImageListItemBar
             title={item.title}
@@ -66,6 +66,11 @@ const itemData = [
     featured: true,
   },
 
+  {
+    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
+    title: 'Fern',
+    author: '@katie_wasserman',
+  },
   {
     img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
     title: 'Fern',

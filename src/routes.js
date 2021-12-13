@@ -12,6 +12,8 @@ import Register from "./pages/connection/Register";
 import Home from "./Home/Home";
 import SocietyMaps from "./pages/details/SocietyMaps";
 import Login from "./pages/connection/Login";
+import Society from "./pages/Society";
+import NewProducts from "./admin/NewSociety";
 
 
 class Routing extends Component {
@@ -33,8 +35,8 @@ class Routing extends Component {
           <Route exact path="/products/:id" component={Details} />
           <Route exact path="/proximite" component={Proximite}/>
           <Route exact path="/proximite/:id/:lat/:lng/:title/:adress/:city" component={SocietyMaps}/>
-
-
+          <Route exact path="/society/:id" component={Society} />
+          <Route exat path="/admin" component={NewProducts} />
           <Route exact path="/compte" component={Compte} />
           <Route exact path="/compte/connexion" component={Login} />
           <Route exact path="/compte/inscription" component={Register} />

@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 class Compte extends Component {
   render() {
     return (
-      <div>
-        <br />
+      <div className="container">
 
         <h1 style={{textAlign:"center"}}>Compte</h1>
         
@@ -28,8 +27,10 @@ class Compte extends Component {
           </Link>
         </div>
       </div>
+      
     </div>
     </div>
+    
     </div>
     );
   }

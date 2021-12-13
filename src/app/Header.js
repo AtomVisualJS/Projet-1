@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+
 import {Link} from 'react-router-dom';
 
 const pages = [
@@ -26,8 +27,13 @@ const pages = [
   },
   {
     id: 3,
+    name: 'Catégorie',
+    to: '/',
+  },
+  {
+    id: 4,
     name: 'Vendre',
-    to: 'newproducts',
+    to: 'admin',
   },
 ];
 
@@ -38,15 +44,24 @@ const pages = [
 
 const settings = [
   {
-    id: 1,
-    name:'Compte',
+    id: 11,
+    name:'Mon Compte',
     to: 'compte',
   },
   {
-    id: 2,
-    name:'Déconnexion',
-    to: 'deconnexion',
+    id: 12,
+    name: 'Mes Favoris',
+    to: 'comptepro',
+
   },
+  {
+    id: 13,
+    name: 'Mon Panier',
+    to: 'comptepro',
+
+  },
+ 
+
 ];
 
 const ResponsiveAppBar = () => {
@@ -69,8 +84,9 @@ const ResponsiveAppBar = () => {
   };
 
   return (
+    <div>
     <AppBar position="fixed">
-      <Container maxWidth="xl" style={{backgroundColor:"#095730"}}>
+      <Container maxWidth="xl" style={{backgroundColor: "darkseagreen"}}>
         <Toolbar disableGutters>
           <Link to="/" style={{textDecoration:"none", color:"white"}}>
           <Typography
@@ -148,7 +164,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="https://dl.img-news.com/dl/img/s3/dl/2021/01/yael-most-beautiful-video.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -180,6 +196,11 @@ const ResponsiveAppBar = () => {
       </Container>
    
     </AppBar>
+    <div style={{ width:"100%", height:"60px"}}>
+   
+
+ </div>
+    </div>
   );
 };
 export default ResponsiveAppBar;

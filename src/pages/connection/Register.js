@@ -46,7 +46,7 @@ class Register extends Component {
       <div>
         <div
           className="container"
-          style={{ margin: "15%", width: "70%", padding: "10%" }}
+          style={{ width: "70%", padding: "7%" }}
         >
           <div className="row">
             <label>
@@ -78,9 +78,11 @@ class Register extends Component {
                   onChange={this.handleClientPasswordChange}
                 />
                 <br />
+                <div style={{textAlign:"center"}}>
                 <button type="submit" className="btn btn-primary">
                   Register
                 </button>
+                </div>
                 <br />
               </div>
             </form>

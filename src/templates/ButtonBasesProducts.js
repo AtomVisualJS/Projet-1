@@ -7,10 +7,25 @@ import Typography from "@mui/material/Typography";
 
 const images = [
   {
-    url:"https://www.normandie-tourisme.fr/wp-content/uploads/2021/07/Vache-normande-ferme-coupigny-TheExplorers-valentin-pacaut-1600x900.jpg",
-    title: "Ferme de la ville de Paris",
-    width: "100%",
+    url:"https://file1.topsante.com/var/topsante/storage/images/1/3/1/8/1318596/lait-cru-est-quoi-exactement.jpg?alias=exact1024x768_l",
+    title: "Lait",
+    width: "33%",
+
   },
+  {
+    url:"https://img.passeportsante.net/1000x526/2021-05-03/i102110-oeuf-nu.jpg",
+    title: "Oeufs",
+    width: "33%",
+
+  },
+  {
+    url:"https://cdn.bioalaune.com/img/article/thumb/900x500/23324-un_sucre_present_dans_la_viande_rouge_favorise_le_developpement_du_cancer.jpg",
+    title: "Boeufs",
+    width: "33%",
+
+  },
+  
+
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
@@ -77,7 +92,7 @@ const ImageMarked = styled("span")(({ theme }) => ({
   transition: theme.transitions.create("opacity"),
 }));
 
-export default function ButtonBases() {
+export default function ButtonBasesProducts() {
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", width:"100%" }}>
       {images.map((image) => (
@@ -86,6 +101,7 @@ export default function ButtonBases() {
           key={image.title}
           style={{
             width: image.width,
+            height: image.height,
           }}
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
