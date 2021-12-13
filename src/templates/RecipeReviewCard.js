@@ -7,8 +7,8 @@ import Collapse from "@mui/material/Collapse";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-//import KeyboardArrowDown from"@material-ui/icons/KeyboardArrowDown";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import KeyboardArrowDown from"@material-ui/icons/KeyboardArrowDown";
+//import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ButtonBasesProducts from "./ButtonBasesProducts";
 
 const ExpandMore = styled((props) => {
@@ -35,8 +35,8 @@ export default function RecipeReviewCard() {
         <ButtonBasesProducts />{" "}
         <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+          <FavoriteIcon /> 
+        </IconButton>98 %
         <IconButton aria-label="share">
          
         </IconButton>
@@ -46,7 +46,7 @@ export default function RecipeReviewCard() {
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
+          <KeyboardArrowDown  />
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>

@@ -10,7 +10,6 @@ import CardContent from "@mui/material/CardContent";
 import RecipeReviewCard from "../templates/RecipeReviewCard";
 import PlaceIcon from "@mui/icons-material/Place";
 import { Avatar } from "@mui/material";
-
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
   height: 150,
@@ -81,24 +80,26 @@ const Home = () => {
 
   const renderedItem = item.map((item, index) => {
     return (
-      <div key={item._id}>
-        <div className="container" style={{ marginTop: "5%" }}>
-          <div style={{ marginTop: "0%" }}>
+      <div key={item.id}>
+        <div
+          className="container"
+          style={{ marginTop: "5%", borderRadius: "5px" }}
+        >
+          <div>
             <Box sx={{ display: "flex", flexWrap: "wrap", width: "100%" }}>
               <ImageButton
                 focusRipple
                 key={item.nav}
                 style={{
                   width: "100%",
-                  height: "100px",
+                  height: "150px",
                 }}
               >
                 <ImageSrc
-                  src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/11/22fd4c39-08d1-4733-a9ac-fd38931ae128/870x489_gettyimages-155292650.jpg"
-                  alt=""
+                  style={{ backgroundImage: `url(${item.societyImageBack})` }}
                 />
                 <ImageBackdrop className="MuiImageBackdrop-root" />
-                <Link to={`/society/${item._id}`}>
+                <Link to={`/society/${item.id}`}>
                   <Image>
                     <Typography
                       component="span"
@@ -112,7 +113,7 @@ const Home = () => {
                       }}
                     >
                       {" "}
-                      {item.name}
+                      {item.societyName}
                       <ImageMarked className="MuiImageMarked-root" />
                     </Typography>
                   </Image>
@@ -126,29 +127,25 @@ const Home = () => {
                 alt="Remy Sharp"
                 src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/11/22fd4c39-08d1-4733-a9ac-fd38931ae128/870x489_gettyimages-155292650.jpg"
                 sx={{ width: 56, height: 56 }}
-              /> 
+              />
               <Link
                 style={{ textDecoration: "none" }}
-                to={`/position/:${item._id}`}
+                to={`/position/${item.id}/${item.location.lat}/${item.location.lng}`}
               >
                 <p style={{ float: "right", width: "40%", textAlign: "right" }}>
-                   {item.location.adress}, {item.location.city} ,
-                  {item.location.zip}<PlaceIcon />
+                  {item.location.address} <br />
+                  {item.location.city} {item.location.cdpostal}
+                  <PlaceIcon />
                 </p>
+               
               </Link>
-              Name: Paul<br />
+              Name: Paul 
+              <br />
               Profession: Agriculteur{item.profession}
               <br />
               <br />
               <h3>Produit ou Service</h3>
-              {item.description}:
-              <p>
-                {" "}
-                lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem
-                ipsum dolor sit amet, consectetur adipiscing elit.lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor
-                sit amet, consectetur adipiscing elit.
-              </p>
+              <p>{item.societyDescription}</p>
               <RecipeReviewCard />
             </CardContent>
           </div>

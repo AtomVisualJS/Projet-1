@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import VerticalLinearStepper from "./VerticalLinearStepper";
+
 class NewProducts extends Component {
   constructor(props) {
     super(props);
@@ -100,10 +100,10 @@ class NewProducts extends Component {
 
   render() {
     return (
-    <div>
-        <VerticalLinearStepper />
+    <div style={{marginTop:"15%"}}>
+     
         <form onSubmit={this.handleSubmit}>
-            <div style={{width:"50%", marginLeft:"25%"}}>
+            <div style={{width:"50%", marginLeft:"25%", }}>
             <div className="form-group">
                 <label>Society</label>
                 <input type="text" className="form-control" value={this.state.society} onChange={this.handleSociety} />

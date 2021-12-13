@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import VirtualizedList from '../templates/VirtualizedList';
+
 import MainMaps from "../web/MainMaps";
 
 class Proximite extends Component {
@@ -17,7 +17,7 @@ class Proximite extends Component {
           <MainMaps />
           
         </div>
-        <VirtualizedList />
+       
       </div>
     );
   }
