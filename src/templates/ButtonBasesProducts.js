@@ -6,18 +6,18 @@ import Typography from '@mui/material/Typography';
 
 const images = [
   {
-    url: '/static/images/buttons/breakfast.jpg',
-    title: 'Breakfast',
+    url: 'https://resize1.prod.docfr.doc-media.fr/rcrop/480,280,center-middle/img/var/doctissimo/storage/images/fr/www/nutrition/lait/lait-tous-les-gouts-sont-dans-la-nature/109030-3-fre-FR/lait-tous-les-gouts-sont-dans-la-nature.jpg',
+    title: 'Lait',
     width: '33.3333333333333333333333333333333333333333333333%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
-    title: 'Burgers',
+    url: 'https://cdn.bioalaune.com/img/article/thumb/900x500/29095-6_bonnes_raisons_de_manger_des_oeufs_regulierement.jpg',
+    title: 'Oeufs',
     width: '33.3333333333333333333333333333333333333333333333%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
-    title: 'Camera',
+    url: 'https://img-3.journaldesfemmes.fr/wL8YsmuUZnKQprYtJFg0isTvxzY=/1500x/smart/432c5298182d45818c7a1b140e6b21f1/ccmcms-jdf/10662027.jpg',
+    title: 'Beurre',
     width: '33.3333333333333333333333333333333333333333333333%',
   },
 ];

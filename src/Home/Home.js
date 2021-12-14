@@ -8,8 +8,19 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import CardContent from "@mui/material/CardContent";
 import RecipeReviewCard from "../templates/RecipeReviewCard";
-import PlaceIcon from "@mui/icons-material/Place";
+import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
+import PropTypes from "prop-types";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import MdPhone from "@mui/icons-material/Phone";
+import Chip from "@mui/material/Chip";
+import PlaceIcon from "@material-ui/icons/Place";
+
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
   height: 150,
@@ -78,21 +89,46 @@ const Home = () => {
   const item = useSelector((state) => state.data.data);
   console.log(item);
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const renderedItem = item.map((item, index) => {
     return (
       <div key={item.id}>
         <div
           className="container"
-          style={{ marginTop: "5%", borderRadius: "5px" }}
+          style={{
+            marginTop: "2%",
+
+            border: "none",
+            borderBottom: "2px solid black",
+            borderTop: "2px solid black",
+
+            backgroundColor: "white",
+          }}
         >
           <div>
-            <Box sx={{ display: "flex", flexWrap: "wrap", width: "100%" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                width: "100%",
+              }}
+            >
+              <br />
+              <br />
               <ImageButton
                 focusRipple
                 key={item.nav}
                 style={{
                   width: "100%",
-                  height: "150px",
+                  height: "160px",
                 }}
               >
                 <ImageSrc
@@ -121,44 +157,131 @@ const Home = () => {
               </ImageButton>
             </Box>
 
-            <CardContent>
-              {" "}
+            <Button onClick={handleClickOpen}>
               <Avatar
                 alt="Remy Sharp"
                 src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/11/22fd4c39-08d1-4733-a9ac-fd38931ae128/870x489_gettyimages-155292650.jpg"
                 sx={{ width: 56, height: 56 }}
               />
-              <Link
-                style={{ textDecoration: "none" }}
-                to={`/position/${item.id}/${item.location.lat}/${item.location.lng}`}
+              <p
+                style={{
+                  color: "black",
+                  paddingLeft: "10px",
+                  fontSize: "0.8rem",
+                  marginBottom: "0%",
+                }}
               >
-                <p style={{ float: "right", width: "40%", textAlign: "right" }}>
-                  {item.location.address} <br />
-                  {item.location.city} {item.location.cdpostal}
-                  <PlaceIcon />
-                </p>
-               
-              </Link>
-              Name: Paul 
-              <br />
-              Profession: Agriculteur{item.profession}
-              <br />
-              <br />
+                {item.contact.userName} <br />
+                {item.contact.profession}
+              </p>
+            </Button>
+            <div style={{ float: "right", margin: "1%" }}>
+              Adress <PlaceIcon />
+            </div>
+            <CardContent style={{ backgroundColor: "white" }}>
+              {" "}
               <h3>Produit ou Service</h3>
               <p>{item.societyDescription}</p>
               <RecipeReviewCard />
+              <BootstrapDialog
+                onClose={handleClose}
+                aria-labelledby="customized-dialog-title"
+                open={open}
+              >
+                <BootstrapDialogTitle
+                  id="customized-dialog-title"
+                  onClose={handleClose}
+                >
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/11/22fd4c39-08d1-4733-a9ac-fd38931ae128/870x489_gettyimages-155292650.jpg"
+                    sx={{ width: 56, height: 56 }}
+                  />{" "}
+                  {item.contact.userName}
+                  {""} <br /> {item.contact.profession}
+                  <Chip
+                    style={{ float: "right" }}
+                    icon={<MdPhone />}
+                    label={item.contact.phone}
+                  />
+                </BootstrapDialogTitle>
+                <DialogContent dividers>
+                  <Typography gutterBottom></Typography>
+                  <Typography gutterBottom>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur et. Vivamus sagittis lacus vel augue laoreet
+                    rutrum faucibus dolor auctor.
+                  </Typography>
+                  <Typography gutterBottom>
+                    Aenean lacinia bibendum nulla sed consectetur. Praesent
+                    commodo cursus magna, vel scelerisque nisl consectetur et.
+                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor
+                    fringilla.
+                  </Typography>
+                </DialogContent>
+                <DialogActions>
+                  <Button autoFocus onClick={handleClose}>
+                    Save changes
+                  </Button>
+                </DialogActions>
+              </BootstrapDialog>
             </CardContent>
           </div>
         </div>
       </div>
     );
   });
-
   return (
-    <div>
-      <div>{renderedItem}</div>
+    <div
+      style={{
+        backgroundImage:
+          'url("https://st.depositphotos.com/1003553/2356/i/600/depositphotos_23563359-stock-photo-texture-of-wood-background-closeup.jpg")',
+      }}
+    >
+      <div>
+        <br />
+        {renderedItem}
+      </div>
     </div>
   );
+};
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
+
+const BootstrapDialogTitle = (props) => {
+  const { children, onClose, ...other } = props;
+
+  return (
+    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+      {children}
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  );
+};
+
+BootstrapDialogTitle.propTypes = {
+  children: PropTypes.node,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Home;

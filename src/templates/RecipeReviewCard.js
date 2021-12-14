@@ -1,15 +1,17 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-
+import { green } from "@mui/material/colors";
+import Icon from "@mui/material/Icon";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import KeyboardArrowDown from"@material-ui/icons/KeyboardArrowDown";
+import { loadCSS } from "fg-loadcss";
 //import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ButtonBasesProducts from "./ButtonBasesProducts";
+import SimpleAccordion from "./SimpleAccordion";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -29,24 +31,37 @@ export default function RecipeReviewCard() {
     setExpanded(!expanded);
   };
 
+  React.useEffect(() => {
+    const node = loadCSS(
+      "https://use.fontawesome.com/releases/v5.14.0/css/all.css",
+      // Inject before JSS
+      document.querySelector("#font-awesome-css") || document.head.firstChild
+    );
+
+    return () => {
+      node.parentNode.removeChild(node);
+    };
+  }, []);
+
   return (
     <div style={{ widht: "100%" }}>
-   
-        <ButtonBasesProducts />{" "}
-        <CardActions disableSpacing>
+      <ButtonBasesProducts />{" "}
+      <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon /> 
         </IconButton>98 %
-        <IconButton aria-label="share">
-         
-        </IconButton>
+        <IconButton aria-label="share"></IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <KeyboardArrowDown  />
+          <Icon
+            baseClassName="fas"
+            className="fa-plus-circle"
+            sx={{ color: green[500] }}
+          />
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -56,10 +71,9 @@ export default function RecipeReviewCard() {
             Tout les produits sont issus de la terre et sont fabriqués en
             France.
           </Typography>
-
+          <SimpleAccordion />
           <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then
-            serve.
+            <ButtonBasesProducts />
           </Typography>
           <br />
 

@@ -3,7 +3,13 @@ import React, { Component } from "react";
 import SingleButtonBases from "../SinglePage/SingleButtonBase.js";
 //import SwipeableTextMobileStepper from '../SinglePage/SwipeableTextMobileStepper.js'
 
+
+
+
+
+
 class Society extends Component {
+
   render() {
     return (
       <div>

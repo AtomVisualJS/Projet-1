@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 const pages = [
   {
     id: 1,
-    name: "Home",
+    name: "Accueil",
     to: "",
   },
   {
@@ -30,11 +30,7 @@ const pages = [
     name: "Catégorie",
     to: "",
   },
-  {
-    id: 4,
-    name: "Vendre",
-    to: "admin",
-  },
+
 ];
 
 const settings = [
@@ -146,7 +142,12 @@ const ResponsiveAppBar = () => {
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
               <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-                {" "}
+              <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sciences_de_la_terre.svg/1200px-Sciences_de_la_terre.svg.png"
+                  alt="logo"
+                  width="30"
+                  height="30"
+                />
                 Yecoom{" "}
               </Link>
             </Typography>
@@ -210,7 +211,7 @@ const ResponsiveAppBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <div style={{ width: "100%", height: "90px" }}></div>
+      <div style={{ width: "100%", height: "50px", backgroundColor:"brown"}}></div>
     </div>
   );
 };

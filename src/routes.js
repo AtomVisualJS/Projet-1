@@ -27,6 +27,8 @@ class Routing extends Component {
             render={() => (
               <React.Fragment>
                 <Home />
+                <Home />
+                <Home />
               
                 
               </React.Fragment>
