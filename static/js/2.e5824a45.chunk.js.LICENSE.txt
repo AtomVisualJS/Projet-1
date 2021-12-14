@@ -4,10 +4,6 @@ object-assign
 @license MIT
 */
 
-/*!
- * Programatically add the following
- */
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -22,6 +18,8 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
+
+/*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
 
 /**
  * A better abstraction over CSS.
