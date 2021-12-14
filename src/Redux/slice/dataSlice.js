@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {DatagetAll} from "../asynThunk/DatagetAll";
+import {DatagetAll} from "../asyncThunk/DatagetAll";
 
 // dataSlice.js
 const dataSlice = createSlice({

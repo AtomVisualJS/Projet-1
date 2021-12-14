@@ -7,7 +7,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 /// Pages
 import Compte from "./pages/Compte";
 import Proximite from "./pages/Proximite";
-import Details from "./pages/Details";
+
 import Register from "./pages/connection/Register";
 import Home from "./Home/Home";
 import SocietyMaps from "./pages/details/SocietyMaps";
@@ -34,14 +34,20 @@ class Routing extends Component {
               </React.Fragment>
             )}
           />
-          <Route exact path="/products/:id" component={Details} />
+
           <Route exact path="/proximite" component={Proximite}/>
+         
           <Route exact path="/position/:id/:lat/:lng" component={SocietyMaps}/>
           <Route exact path="/society/:id" component={Society} />
+         
           <Route exat path="/admin" component={NewProducts} />
+          
+          
           <Route exact path="/compte" component={Compte} />
           <Route exact path="/compte/connexion" component={Login} />
           <Route exact path="/compte/inscription" component={Register} />
+          
+          
           <Redirect to="/" />
         </Switch>
       </div>

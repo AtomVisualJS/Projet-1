@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { getAllUsers } from "../asynThunk/usersThunk";
+import { getAllUsers } from "../asyncThunk/usersThunk";
 import { useDispatch } from "react-redux";
 
 export const UsersDispatch = () => {

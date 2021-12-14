@@ -20,6 +20,8 @@ import DialogContent from "@mui/material/DialogContent";
 import MdPhone from "@mui/icons-material/Phone";
 import Chip from "@mui/material/Chip";
 import PlaceIcon from "@material-ui/icons/Place";
+import Background from "../image/SIte.jpg";
+
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
@@ -234,8 +236,7 @@ const Home = () => {
   return (
     <div
       style={{
-        backgroundImage:
-          'url("https://st.depositphotos.com/1003553/2356/i/600/depositphotos_23563359-stock-photo-texture-of-wood-background-closeup.jpg")',
+        backgroundImage: `url(${Background})`,
       }}
     >
       <div>

@@ -2,7 +2,7 @@
 /// Create the slice user reducer
 
 import { createSlice } from '@reduxjs/toolkit';
-import  {getAllUsers}  from '../asynThunk/usersThunk';
+import  {getAllUsers}  from '../asyncThunk/usersThunk';
 
 const usersSlice = createSlice({
     name: 'users',
