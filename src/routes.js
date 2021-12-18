@@ -37,7 +37,7 @@ class Routing extends Component {
 
           <Route exact path="/proximite" component={Proximite}/>
          
-          <Route exact path="/position/:id/:lat/:lng" component={SocietyMaps}/>
+          <Route exact path="/position/:id/:lat/:lng/:address" component={SocietyMaps}/>
           <Route exact path="/society/:id" component={Society} />
          
           <Route exat path="/admin" component={NewProducts} />

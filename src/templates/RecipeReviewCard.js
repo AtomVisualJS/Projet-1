@@ -5,11 +5,9 @@ import Icon from "@mui/material/Icon";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { loadCSS } from "fg-loadcss";
-//import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ButtonBasesProducts from "./ButtonBasesProducts";
 import SimpleAccordion from "./SimpleAccordion";
 
@@ -43,14 +41,14 @@ export default function RecipeReviewCard() {
     };
   }, []);
 
+
+
+
+
   return (
     <div style={{ widht: "100%" }}>
       <ButtonBasesProducts />{" "}
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon /> 
-        </IconButton>98 %
-        <IconButton aria-label="share"></IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -72,9 +70,9 @@ export default function RecipeReviewCard() {
             France.
           </Typography>
           <SimpleAccordion />
-          <Typography>
+         
             <ButtonBasesProducts />
-          </Typography>
+      
           <br />
 
           <div style={{ textAlign: "center" }}></div>

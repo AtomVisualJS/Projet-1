@@ -85,8 +85,8 @@ const ResponsiveAppBar = () => {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sciences_de_la_terre.svg/1200px-Sciences_de_la_terre.svg.png"
                   alt="logo"
-                  width="50"
-                  height="50"
+                  width="40"
+                  height="40"
                 />
                 Yecoom
               </Typography>
@@ -211,7 +211,7 @@ const ResponsiveAppBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <div style={{ width: "100%", height: "50px", backgroundColor:"brown"}}></div>
+      <div style={{ width: "100%", height: "30px", backgroundColor:"brown"}}></div>
     </div>
   );
 };

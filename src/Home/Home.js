@@ -20,8 +20,6 @@ import DialogContent from "@mui/material/DialogContent";
 import MdPhone from "@mui/icons-material/Phone";
 import Chip from "@mui/material/Chip";
 import PlaceIcon from "@material-ui/icons/Place";
-import Background from "../image/SIte.jpg";
-
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
@@ -106,31 +104,24 @@ const Home = () => {
         <div
           className="container"
           style={{
-            marginTop: "2%",
-
-            border: "none",
             borderBottom: "2px solid black",
-            borderTop: "2px solid black",
-
             backgroundColor: "white",
           }}
         >
           <div>
             <Box
-              sx={{
+              sx={{ 
                 display: "flex",
                 flexWrap: "wrap",
                 width: "100%",
               }}
             >
-              <br />
-              <br />
               <ImageButton
                 focusRipple
                 key={item.nav}
                 style={{
                   width: "100%",
-                  height: "160px",
+                  height: "130px",
                 }}
               >
                 <ImageSrc
@@ -150,7 +141,6 @@ const Home = () => {
                         pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                       }}
                     >
-                      {" "}
                       {item.societyName}
                       <ImageMarked className="MuiImageMarked-root" />
                     </Typography>
@@ -177,8 +167,12 @@ const Home = () => {
                 {item.contact.profession}
               </p>
             </Button>
-            <div style={{ float: "right", margin: "1%" }}>
-              Adress <PlaceIcon />
+            <div style={{ float: "right", margin: "3%", fontSize: "1rem" }}>
+              <Link to={`/position/${item.id}/${item.location.lat}/${item.location.lng}/${item.location.address}`}>
+                {item.location.address} <br />
+                {item.location.cdpostal} {item.location.city}
+                <PlaceIcon />
+              </Link>
             </div>
             <CardContent style={{ backgroundColor: "white" }}>
               {" "}
@@ -199,7 +193,7 @@ const Home = () => {
                     src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/11/22fd4c39-08d1-4733-a9ac-fd38931ae128/870x489_gettyimages-155292650.jpg"
                     sx={{ width: 56, height: 56 }}
                   />{" "}
-                  {item.contact.userName}
+                 {item.contact.userName}
                   {""} <br /> {item.contact.profession}
                   <Chip
                     style={{ float: "right" }}
@@ -223,7 +217,7 @@ const Home = () => {
                 </DialogContent>
                 <DialogActions>
                   <Button autoFocus onClick={handleClose}>
-                    Save changes
+                    En savoir plus
                   </Button>
                 </DialogActions>
               </BootstrapDialog>
@@ -234,13 +228,9 @@ const Home = () => {
     );
   });
   return (
-    <div
-      style={{
-        backgroundImage: `url(${Background})`,
-      }}
-    >
+    <div>
       <div>
-        <br />
+        <br />      
         {renderedItem}
       </div>
     </div>
